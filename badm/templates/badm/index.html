@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{% static 'badm/style.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,300&family=Oswald:wght@600&display=swap" rel="stylesheet">
+        <title>Домашняя страница</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="top">
+                <div class="header">BadMINTon</div>
+                <div class="topnav">
+                    <div><a href="{% url 'home' %}" style="background-color: rgb(0, 109, 160);">Домашняя страница</a></div>
+                    <div><a href="{% url 'wiki' %}">wiki</a></div>
+                    <div><a href="{% url 'schedule' %}">Расписание</a></div>
+                    <div><a href="{% url 'categories' %}">Категории участников</a></div>
+                    <div><a href="{% url 'form' %}">Заявка на участие</a></div>
+                </div>
+            </div>
+
+            <div class="content">
+                <h1>Инфорамация о ресурсе</h1>
+                <p>
+                    Данный сайт выступает в роли инструмента для организации соревнований по бадминтону.
+                    У вас есть возможность <a href="{% url 'wiki' %}">узнать больше о данном виде спорта</a>. 
+                    Также Вы можете ознакомиться с <a href="{% url 'schedule' %}">рассписанием соревнований</a>. 
+                    Для желающих принять участие есть <a href="{% url 'categories' %}">информация о составе команд для участия</a>.
+                    Также Вы можете оставить <a href="{% url 'form' %}">заявку на участие</a>.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

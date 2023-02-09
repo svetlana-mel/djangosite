@@ -1,0 +1,186 @@
+
+/* @media (max) */
+
+body {
+    margin: 0;
+    /* background-color: rgb(204, 223, 231); */
+}
+
+.container {
+    width: 100%;
+    font-family: 'IBM Plex Sans', 'sans-serif';
+    font-size: normal;
+}
+
+.header {
+    background-color: rgb(0, 52, 77);
+    font-family: 'Oswald', 'IBM Plex Sans', 'sans-serif';
+    font-weight: bold;
+    font-size: xx-large;
+    text-align: center;
+    color: coral;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.top {
+    position: fixed;
+    width: 100%;
+}
+
+/* ========== navigation ========== */
+.topnav {
+    font-family: 'Oswald', 'IBM Plex Sans', 'sans-serif';
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 100px
+}
+
+.topnav a {
+    background-color: rgb(0, 52, 77);
+    float: left;
+    box-sizing: border-box;
+    min-height: 50px;
+    width: 20%;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+}
+
+.topnav a:hover {
+    background: rgb(0, 85, 124);
+}
+
+/* =============== content =============== */
+
+.content {
+    clear: both;
+    max-width: 75%;
+    margin: auto;
+    padding-top: 120px;
+}
+
+.content h1 {
+    font-size: x-large;
+    color: rgb(0, 52, 77);
+}
+
+.content a {
+    font-weight: bold;
+    color: rgb(0, 52, 77);
+}
+
+/* =============== wiki =============== */
+
+.article {
+    margin-left: 50px
+}
+
+.aside {
+    position: fixed;
+    margin-top: 120px;
+}
+
+.aside div {
+    height: 50px;
+    margin: 20px;
+}
+
+.aside a {
+    font-family: 'Oswald', 'IBM Plex Sans', 'sans-serif';
+    font-weight: bold;
+    font-size: large;
+    color:rgb(0, 109, 160);
+}
+
+.section img {
+    width: 100%;
+}
+
+
+/* =============== table + bottom pictures =============== */
+
+.bottom-info div {
+    float: left;
+    box-sizing: border-box;
+    width: 25%;
+    height: 200px;
+    align-items: center;
+    display: flex;
+}
+
+.bottom-info img {
+    width: 150px;
+}
+
+
+/* =============== form =============== */
+
+.register {
+    max-width: 700px;
+}
+
+.register h1 {
+    text-align: center;
+}
+
+.form-group {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.checkbox {
+    max-width: 100px;
+    font: inherit;
+    margin-bottom: 40px;
+}
+
+.form-group label {
+    display: block;
+    color:rgb(0, 52, 77);
+}
+
+.form-group input {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    background-color: aliceblue;
+    background: transparent;
+    border-bottom: 1px solid rgb(177, 208, 223);
+    color: black;
+    padding: 15px 0 10px;
+    outline: none;
+    font-family: inherit;
+}
+
+.name {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.name > .form-group {
+    width: 50%;
+    margin-right: 20px;
+}
+
+.btn {
+    background: rgb(0, 52, 77);
+    padding: 15px 20px;
+    border: none;
+    color: white;
+    font-family: inherit;
+    font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}

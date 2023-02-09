@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'badm/style.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,300&family=Oswald:wght@600&display=swap" rel="stylesheet">
+        <title>Расписание</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="top">
+                <div class="header">BadMINTon</div>
+                <div class="topnav">
+                    <div><a href="{% url 'home' %}">Домашняя страница</a></div>
+                    <div><a href="{% url 'wiki' %}">wiki</a></div>
+                    <div><a href="{% url 'schedule' %}" style="background-color: rgb(0, 109, 160);">Расписание</a></div>
+                    <div><a href="{% url 'categories' %}">Категории участников</a></div>
+                    <div><a href="{% url 'form' %}">Заявка на участие</a></div>
+                </div>
+            </div>
+
+            <div class="content">
+                <h1 class="shedule-header">Турниры по бадминтону, ближайшие дни</h1>
+
+                <table class="main-table">
+                    <colgroup>
+                        <col width="10%">
+                        <col width="30%">
+                        <col width="20%">
+                        <col width="5%">
+                        <col width="10%">
+                        <col width="10%">
+                        <col width="20%">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Название</th>
+                        <th>Разряды</th>
+                        <th>Группы</th>
+                        <th>Возраст</th>
+                        <th>Город</th>
+                        <th>Организатор</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for event in events %}                     
+                        <tr>
+                            <td>{{ event.date }}</td>
+                            <td>{{ event.name }}</td>
+                            <td>
+                                {% for type in event.types.all %}
+                                    {{ type }}
+                                {% endfor %}
+                            </td>
+                            <td>
+                                {% for group in event.groups.all %}
+                                    {{ group }}
+                                {% endfor %}
+                            </td>
+                            <td>
+                                {% for a in event.age.all %}
+                                    {{ a }}
+                                {% endfor %}
+                            </td>
+                            <td>{{ event.town }}</td>
+                            <td>
+                                {% for org in event.organizers.all %}
+                                    {{ org }}
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <h1 style="color: rgb(0, 125, 179); text-align: center;">Партнеры</h1>
+                <div class="bottom-info">
+                    <div><a href="http://badmclub.ru/" target="_blank"><img src="{% static 'badm/img/badmClub.png' %}"></a></div>
+                    <div><a href="https://xbadm.ru/" target="_blank"><img src="{% static 'badm/img/khimki.png' %}"></a></div>
+                    <div><a href="http://www.naten.org/default.html" target="_blank"><img src="{% static 'badm/img/naten.png' %}"></a></div>
+                    <div><a href="http://badm.ru/" target="_blank"><img src="{% static 'badm/img/нфбр.png' %}"></a></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
